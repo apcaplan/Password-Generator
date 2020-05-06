@@ -1,0 +1,73 @@
+body{
+  background-color: #000;
+  display: flex;
+  position: relative;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+input{
+  padding-left: 10px;
+}
+
+#pwLength, #response{
+  font-size: 16px;
+  height: 1.5rem;
+  margin-left: 1.8rem;
+  outline: double;
+  width: 330px;
+}
+
+#response{
+  margin-left: 5.8rem;
+}
+
+.box{
+  background-color: #fff;
+  box-shadow: 0 0 100px 0 rgba(255, 255, 255, 0.75);
+/*   margin: 4rem auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+/*   width: 45%; */
+}
+
+.button{
+  background-color: #0095ff;
+  color: #fff;
+  display: block;
+  font-size: 13px;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.label{
+  padding-left: 1.6rem;
+}
+
+.row{
+  margin: 1rem 0;
+/*   padding-top: 1rem; */
+  width: 37rem;
+}
+
+.row2{
+  margin: 1rem 0;
+  width: 37rem;
+}
+
+.row3{
+  margin-top: 1.8rem;
+  padding-bottom: 3rem;
+}
+
+.wrapper{
+  font-size: 20px;
+  margin: auto;
+  width: 32em;
+}

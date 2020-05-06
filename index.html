@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Password Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="app.js"type="text/javascript" charset="utf-8" defer></script>
+    <noscript>You need to enable Javascript for Password Generator to work</noscript>
+
+  </head>
+
+  <body>
+
+    <div class="box">
+      <h1>Password Generator</h1>
+
+      <div class="wrapper">
+        <div class='row'>
+           <label for "password" class="label">Enter password length:</label>
+          <input type="number" min="4" name="password" id="pwLength">
+        </div>
+
+        <div class="row2">
+         <input class="button" type="submit" onclick="createPassword()">
+       </div>
+
+        <div class="row3">
+          <label for "newPassword" class="label">New password:  </label>
+          <input type="text" name="newPassword" placeholder="  New password will appear here" id="response">
+       </div>
+      </div>
+    </div>
+  </body>
+</html>
