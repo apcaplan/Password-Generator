@@ -2,6 +2,7 @@ body{
   background-color: #000;
   display: flex;
   position: relative;
+  max-width: 100%;
 }
 
 h1{
@@ -44,12 +45,10 @@ input{
 .box{
   background-color: #fff;
   box-shadow: 0 0 100px 0 rgba(255, 255, 255, 0.75);
-/*   margin: 4rem auto; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
-/*   width: 45%; */
 }
 
 .button{
@@ -99,3 +98,105 @@ input{
   margin: auto;
   width: 32em;
 }
+
+@media screen and (max-width: 670px) {
+  #pwLength{
+    margin-right: 14.5rem;
+    width: 40px;
+  }
+
+  #response{
+    margin-left: 1rem;
+    width: 260px;
+  }
+
+  .box{
+    width: 80%;
+  }
+
+  .button{
+    margin-right: 11.7rem;
+    margin-top: 1.2rem;
+  }
+
+  .label{
+    padding: 0;
+  }
+
+  .row, .row4{
+    margin-left: 1.6rem;
+  }
+
+  .row2 input{
+    margin-top: 8px;
+    margin-left: 4.5rem;
+
+  }
+
+  .row4 input{
+    margin-top: 10px;
+  }
+
+  .wrapper{
+  width: auto;
+  }
+
+  }
+
+@media screen and (max-width: 525px) {
+#pwLength{
+  margin-right: 18.2rem;
+  outline: double;
+}
+
+#response{
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.button{
+  margin-left: 8rem;
+}
+
+.row, .row2, .row4{
+  margin-left: 1rem;
+}
+
+.row2 input{
+  margin: 8px 10px 0 12px;
+}
+
+}
+
+@media screen and (max-width: 415px) {
+  h1{
+    margin: 1.3rem 0 0;
+  }
+
+  #pwLength{
+    margin-right: 19rem;
+    outline: double;
+    width: 30px;
+  }
+
+  #response{
+    width: 240px;
+}
+
+  .box{
+    width: 85vw;
+  }
+
+  .button{
+    margin-left: 7.2rem;
+  }
+
+  .row, .row2, .row4{
+    margin-left: 1rem;
+  }
+
+  .row2 input{
+    margin: 8px 12px 0 1rem;
+  }
+
+  }
