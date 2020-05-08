@@ -19,17 +19,33 @@
     <div class="box">
       <h1>Password Generator</h1>
 
+      <p id="warning"></p>
+
       <div class="wrapper">
         <div class='row'>
-           <label for "password" class="label">Enter password length:</label>
+          <label for "password" class="label">Enter password length:</label>
           <input type="number" min="4" name="password" id="pwLength">
         </div>
 
         <div class="row2">
+          <label for "lc">Include lowercase letters (abcdefg...)?</label>
+          <input type="checkbox" id="lowercase" name="lc" checked>
+          <br>
+          <label for "uc">Include uppercase letters (ABCDEFG...)?</label>
+          <input type="checkbox" id="uppercase" name="uc" checked>
+          <br>
+          <label for "num">Include numbers (1234567...)?</label>
+          <input type="checkbox" id="numbers" name="num" checked>
+          <br>
+          <label for "sym">Include symbols (!@#$%^&...)?</label>
+          <input type="checkbox" id="symbols" name="sym" checked>
+        </div>
+
+        <div class="row3">
          <input class="button" type="submit" onclick="createPassword()">
        </div>
 
-        <div class="row3">
+        <div class="row4">
           <label for "newPassword" class="label">New password:  </label>
           <input type="text" name="newPassword" placeholder="  New password will appear here" id="response">
        </div>

@@ -7,7 +7,8 @@ body{
 h1{
   display: flex;
   justify-content: center;
-  padding: 1.5rem;
+  margin: 1.5rem;
+  padding-top: 0.3rem;
 }
 
 input{
@@ -17,13 +18,27 @@ input{
 #pwLength, #response{
   font-size: 16px;
   height: 1.5rem;
-  margin-left: 1.8rem;
-  outline: double;
-  width: 330px;
+}
+
+#pwLength{
+  float: right;
+  margin-right: 7rem;
+  /* outline: solid; */
+  text-align: center;
+  width: 50px;
 }
 
 #response{
   margin-left: 5.8rem;
+  outline: double;
+  width: 330px;
+}
+
+#warning{
+  color: red;
+  display: flex;
+  font-size: 22px;
+  justify-content: center;
 }
 
 .box{
@@ -39,11 +54,13 @@ input{
 
 .button{
   background-color: #0095ff;
+  /* border-radius: 15px; */
   color: #fff;
   display: block;
-  font-size: 13px;
+  font-size: 16px;
   margin-left: auto;
   margin-right: 1rem;
+  padding: 0.8rem 1.2rem;
 }
 
 .label{
@@ -51,17 +68,28 @@ input{
 }
 
 .row{
-  margin: 1rem 0;
+  margin: 1.2rem 0;
 /*   padding-top: 1rem; */
   width: 37rem;
 }
 
 .row2{
+  display: inline-block;
+  line-height: 1.5;
+  margin-left: 1.6rem;
+}
+
+.row2 input{
+  float: right;
+  margin-left: 5rem;
+}
+
+.row3{
   margin: 1rem 0;
   width: 37rem;
 }
 
-.row3{
+.row4{
   margin-top: 1.8rem;
   padding-bottom: 3rem;
 }

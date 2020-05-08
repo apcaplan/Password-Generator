@@ -1,35 +1,81 @@
 'use strict'
 
-const characters = {
-  0: 'abcdefghijklmnopqrstuvwvyz',
-  1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  2: '0123456789',
-  3: '!@#$%^&*()-_+=;:<>?,.~{}'
-}
+const lower = 'abcdefghijklmnopqrstuvwvyz'
+const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const number =  '0123456789'
+const symbols = '!@#$%^&*()-_+=;:<>?,.~{}'
+
+const characters = {}
+
+let passwordCheck
 
 const randInt = function (num) {
   return Math.floor(Math.random() * num)
 }
 
-const select = function() {
-  const char = characters[randInt(4)]
+function clearObject () {
+  for (const x in characters) {
+    if(characters.hasOwnProperty(x)){
+      delete characters[x]
+    }
+  }
+}
+
+function makeCharacterObject() {
+  clearObject()
+  let temp = []
+  let forRegEx = ''
+  if(document.getElementById('lowercase').checked){
+    temp.push(lower)
+    forRegEx += '(?=.*[a-z])'
+  }
+  if(document.getElementById('uppercase').checked){
+    temp.push(upper)
+    forRegEx += '(?=.*[A-Z])'
+  }
+  if(document.getElementById('numbers').checked){
+    temp.push(number)
+    forRegEx += '(?=.*[0-9])'
+  }
+  if(document.getElementById('symbols').checked){
+    temp.push(symbols)
+    forRegEx += '(?=.*[!@#$%^&*()\\-_+=;:<>?,.~\\{\\}])'
+  }
+  temp.forEach(element => {
+    characters[temp.indexOf(element)] = element
+  })
+  passwordCheck = new RegExp(forRegEx)
+}
+
+function select() {
+  const char = characters[randInt(Object.keys(characters).length)]
   return char.split('')[randInt(char.length)]
 }
 
-const passwordCheck = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()\-_+=;:<>?,.~\{\}])/
-
-function createPassword() {
+function generatePassword() {
   let password = ''
   const pwLength = document.getElementById('pwLength').value
   let p = pwLength
+  document.getElementById('warning').innerHTML=''
+  if(!pwLength){
+    document.getElementById('warning').innerHTML='Please enter a password length!'
+  } else if (Object.keys(characters).length === 0) {
+    document.getElementById('warning').innerHTML='Please check at least one box!'
+  } else {
   while(p--) {
     password += select()
   }
   if(passwordCheck.test(password)){
-    document.getElementById('response').value=password
+    document.getElementById('response').value = password
   } else {
     password = ''
     p = pwLength
-    createPassword()
+    generatePassword()
   }
+}
+}
+
+function createPassword() {
+  makeCharacterObject()
+  generatePassword()
 }
