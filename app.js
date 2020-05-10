@@ -59,6 +59,8 @@ function generatePassword() {
   document.getElementById('warning').innerHTML=''
   if(!pwLength){
     document.getElementById('warning').innerHTML='Please enter a password length!'
+  } else if (pwLength < 4) {
+    document.getElementById('warning').innerHTML='Password length must be at least 4'
   } else if (Object.keys(characters).length === 0) {
     document.getElementById('warning').innerHTML='Please check at least one box!'
   } else {
